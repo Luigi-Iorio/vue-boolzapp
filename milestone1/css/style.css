@@ -54,7 +54,7 @@ li {
 /* container Boolzapp */
 .container {
   margin: auto;
-  max-width: 1380px;
+  width: 1380px;
   height: 700px;
   background-color: #ffffff;
 }
@@ -67,7 +67,6 @@ li {
 
 .right {
   width: calc(100% - 480px);
-  height: 700px;
 }
 
 /* header */
@@ -80,6 +79,14 @@ header {
 
 .info-utente h3 {
   margin-left: 20px;
+}
+
+.info-utente .d-flex-col {
+  margin-left: 20px;
+}
+
+.info-utente .d-flex-col h3 {
+  margin: 0;
 }
 
 .img-utente {
