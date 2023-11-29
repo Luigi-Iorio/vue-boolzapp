@@ -43,8 +43,16 @@ li {
   align-items: flex-start;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .space-between {
@@ -182,6 +190,25 @@ header {
   background-image: url(/img/mine.jpg);
   background-position: center;
   background-size: contain;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 20px;
+}
+
+.utente {
+  background-color: rgb(91, 189, 91);
+  color: white;
+  padding: 10px 20px;
+  align-self: end;
+  border-radius: 10px;
+}
+
+.interlocutore {
+  align-self: start;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 /* messaggio */
