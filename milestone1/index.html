@@ -75,68 +75,12 @@
           <!-- contatti -->
           <div class="contatti d-flex-col">
             <ul>
-              <li>
+              <li v-for="contact in contacts">
                 <div class="info-utente d-flex align-start">
                   <div class="img-utente">
-                    <img src="../img/avatar_1.jpg" alt="foto profilo" />
+                    <img :src="contact.avatar" alt="foto profilo" />
                   </div>
-                  <h3>Michele</h3>
-                </div>
-              </li>
-              <li>
-                <div class="info-utente d-flex align-start">
-                  <div class="img-utente">
-                    <img src="../img/avatar_2.jpg" alt="foto profilo" />
-                  </div>
-                  <h3>Fabio</h3>
-                </div>
-              </li>
-              <li>
-                <div class="info-utente d-flex align-start">
-                  <div class="img-utente">
-                    <img src="../img/avatar_3.jpg" alt="foto profilo" />
-                  </div>
-                  <h3>Samuele</h3>
-                </div>
-              </li>
-              <li>
-                <div class="info-utente d-flex align-start">
-                  <div class="img-utente">
-                    <img src="../img/avatar_4.jpg" alt="foto profilo" />
-                  </div>
-                  <h3>Alessandro B.</h3>
-                </div>
-              </li>
-              <li>
-                <div class="info-utente d-flex align-start">
-                  <div class="img-utente">
-                    <img src="../img/avatar_5.jpg" alt="foto profilo" />
-                  </div>
-                  <h3>Alessandro L.</h3>
-                </div>
-              </li>
-              <li>
-                <div class="info-utente d-flex align-start">
-                  <div class="img-utente">
-                    <img src="../img/avatar_6.jpg" alt="foto profilo" />
-                  </div>
-                  <h3>Claudia</h3>
-                </div>
-              </li>
-              <li>
-                <div class="info-utente d-flex align-start">
-                  <div class="img-utente">
-                    <img src="../img/avatar_7.jpg" alt="foto profilo" />
-                  </div>
-                  <h3>Federico</h3>
-                </div>
-              </li>
-              <li>
-                <div class="info-utente d-flex align-start">
-                  <div class="img-utente">
-                    <img src="../img/avatar_8.jpg" alt="foto profilo" />
-                  </div>
-                  <h3>Davide</h3>
+                  <h3>{{contact.name}}</h3>
                 </div>
               </li>
             </ul>
