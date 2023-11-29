@@ -93,7 +93,6 @@ header {
 /* notifiche */
 .notifiche {
   padding: 20px;
-  height: 80px;
   background-color: #8edafc;
 }
 
@@ -113,4 +112,22 @@ header {
 .bell i {
   font-size: 20px;
   color: #8edafc;
+}
+
+/* ricerca */
+.ricerca {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.ricerca .icon {
+  width: 15%;
+  height: 30px;
+  background-color: white;
+}
+
+.ricerca input {
+  width: 85%;
+  height: 30px;
+  border: none;
 }
