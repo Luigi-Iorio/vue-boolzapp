@@ -8,7 +8,6 @@
 /* COMMON */
 body {
   height: 100vh;
-  max-width: 1380px;
   margin: 0 auto;
   font-family: "Lato", sans-serif;
   background: linear-gradient(to bottom, #009788 20%, #d5dbdb 20%);
@@ -59,22 +58,32 @@ li {
   justify-content: space-between;
 }
 
+.icon i {
+  cursor: pointer;
+}
+
+/* app */
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 /* container Boolzapp */
 .container {
   margin: auto;
-  width: 1380px;
-  height: 700px;
+  width: 90%;
+  height: 90%;
   background-color: #ffffff;
 }
 
 .left {
-  width: 480px;
+  width: 40%;
   height: 100%;
   overflow: hidden;
 }
 
 .right {
-  width: calc(100% - 480px);
+  width: 60%;
 }
 
 /* header */
@@ -166,6 +175,12 @@ header {
 .contatti .info-utente {
   padding: 10px 20px;
   border-top: 1px solid #d7d7d7;
+  transition: 0.5s;
+}
+
+.contatti .info-utente:hover {
+  cursor: pointer;
+  background-color: #e9ebeb;
 }
 
 .contatti ul li:first-child .info-utente {
