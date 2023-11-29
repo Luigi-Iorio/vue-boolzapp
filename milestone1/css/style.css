@@ -14,6 +14,10 @@ body {
   background: linear-gradient(to bottom, #009788 20%, #d5dbdb 20%);
 }
 
+li {
+  list-style-type: none;
+}
+
 :root {
   --bg-green: #009788;
   --bg-grey: #d5dbdb;
@@ -35,6 +39,10 @@ body {
   align-items: center;
 }
 
+.align-start {
+  align-items: flex-start;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -46,14 +54,15 @@ body {
 /* container Boolzapp */
 .container {
   margin: auto;
-  max-height: 700px;
   max-width: 1380px;
+  height: 700px;
   background-color: #ffffff;
 }
 
 .left {
   width: 480px;
-  max-height: 700px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .right {
@@ -70,7 +79,7 @@ header {
 }
 
 .info-utente h3 {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .img-utente {
@@ -130,4 +139,27 @@ header {
   width: 85%;
   height: 30px;
   border: none;
+}
+
+/* contatti */
+.contatti {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+.contatti .info-utente {
+  padding: 10px 20px;
+  border-top: 1px solid #d7d7d7;
+}
+
+.contatti ul li:first-child .info-utente {
+  border: none;
+}
+
+.contatti .img-utente {
+  width: 60px;
+  height: 60px;
+}
+
+.contatti h3 {
+  font-size: 16px;
 }
