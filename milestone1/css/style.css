@@ -7,7 +7,11 @@
 
 /* COMMON */
 body {
+  height: 100vh;
+  max-width: 1380px;
+  margin: 0 auto;
   font-family: "Lato", sans-serif;
+  background: linear-gradient(to bottom, #009788 20%, #d5dbdb 20%);
 }
 
 :root {
@@ -31,29 +35,17 @@ body {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .space-between {
   justify-content: space-between;
 }
 
-/* background */
-.bg {
-  height: 100vh;
-}
-
-.bg-green {
-  height: 120px;
-  background-color: var(--bg-green);
-  margin-bottom: -100px;
-}
-
-.bg-grey {
-  height: 100%;
-  background-color: var(--bg-grey);
-}
-
 /* container Boolzapp */
 .container {
-  margin: 0 auto;
+  margin: auto;
   max-height: 700px;
   max-width: 1380px;
   background-color: #ffffff;
@@ -61,11 +53,11 @@ body {
 
 .left {
   width: 480px;
-  height: 700px;
+  max-height: 700px;
 }
 
 .right {
-  width: calc(100% - 400px);
+  width: calc(100% - 480px);
   height: 700px;
 }
 
