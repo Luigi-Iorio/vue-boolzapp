@@ -9,3 +9,54 @@
 body {
   font-family: "Lato", sans-serif;
 }
+
+:root {
+  --bg-green: #009788;
+  --bg-grey: #d5dbdb;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* background */
+.bg {
+  height: 100vh;
+}
+
+.bg-green {
+  height: 120px;
+  background-color: var(--bg-green);
+  margin-bottom: -100px;
+}
+
+.bg-grey {
+  height: 100%;
+  background-color: var(--bg-grey);
+}
+
+/* container Boolzapp */
+.container {
+  margin: 0 auto;
+  max-height: 700px;
+  max-width: 1380px;
+  background-color: #ffffff;
+}
+
+.left {
+  width: 500px;
+  height: 700px;
+  border: 1px solid black;
+}
+
+.right {
+  width: calc(100% - 400px);
+  height: 700px;
+  border: 1px solid black;
+}
