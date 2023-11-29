@@ -13,6 +13,8 @@ body {
 :root {
   --bg-green: #009788;
   --bg-grey: #d5dbdb;
+  --bg-header: #eaeaea;
+  --icon: #b1b1b1;
 }
 
 .d-flex {
@@ -23,6 +25,14 @@ body {
 .d-flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 /* background */
@@ -50,13 +60,40 @@ body {
 }
 
 .left {
-  width: 500px;
+  width: 480px;
   height: 700px;
-  border: 1px solid black;
 }
 
 .right {
   width: calc(100% - 400px);
   height: 700px;
-  border: 1px solid black;
+}
+
+/* header */
+header {
+  height: 70px;
+  padding: 15px;
+  background-color: var(--bg-header);
+  border-right: 1px solid #d7d7d7;
+}
+
+.info-utente h3 {
+  margin-left: 10px;
+}
+
+.img-utente {
+  width: 50px;
+  height: 50px;
+}
+
+.img-utente img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon {
+  gap: 15px;
+  color: var(--icon);
 }
