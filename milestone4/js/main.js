@@ -169,6 +169,7 @@ createApp({
       ],
       contattoAttivo: 0,
       testoInput: "",
+      ricercaInput: "",
     };
   },
   methods: {
@@ -195,6 +196,15 @@ createApp({
         this.rispostaPosticipata();
       }
       this.testoInput = "";
+    },
+    ricercaContatti() {
+      if (this.ricercaInput.trim() !== "") {
+        return this.contacts.filter((contact) =>
+          contact.name.toLowerCase().includes(this.ricercaInput.toLowerCase())
+        );
+      } else {
+        return this.contacts;
+      }
     },
   },
 }).mount("#app");
