@@ -177,7 +177,7 @@ createApp({
       this.contattoAttivo = index;
     },
     rispostaPosticipata() {
-      setTimeout(function () {
+      setTimeout(() => {
         this.contacts[this.contattoAttivo].messages.push({
           date: "00/00/0000 00:00:00",
           message: "ok",
@@ -192,7 +192,7 @@ createApp({
           message: this.testoInput,
           status: "sent",
         });
-        this.rispostaPosticipata;
+        this.rispostaPosticipata();
       }
       this.testoInput = "";
     },
