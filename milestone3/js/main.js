@@ -168,12 +168,33 @@ createApp({
         },
       ],
       contattoAttivo: 0,
+      testoInput: "",
     };
   },
   methods: {
     // al click contatore è uguale a index
     attivo(index) {
       this.contattoAttivo = index;
+    },
+    rispostaPosticipata() {
+      setTimeout(function () {
+        this.contacts[this.contattoAttivo].messages.push({
+          date: "00/00/0000 00:00:00",
+          message: "ok",
+          status: "received",
+        });
+      }, 1000);
+    },
+    invioMessaggio() {
+      if (this.testoInput !== "") {
+        this.contacts[this.contattoAttivo].messages.push({
+          date: "00/00/0000 00:00:00",
+          message: this.testoInput,
+          status: "sent",
+        });
+        this.rispostaPosticipata;
+      }
+      this.testoInput = "";
     },
   },
 }).mount("#app");

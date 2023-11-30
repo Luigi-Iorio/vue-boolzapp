@@ -136,6 +136,8 @@
               id="messaggio"
               name="messaggio"
               placeholder="Scrivi un messaggio"
+              v-model="testoInput"
+              @keyup.enter="invioMessaggio"
             />
             <div class="icon d-flex justify-center">
               <i class="fa-solid fa-microphone"></i>
