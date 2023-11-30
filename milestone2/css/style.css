@@ -212,8 +212,7 @@ header {
 }
 
 .utente {
-  background-color: rgb(91, 189, 91);
-  color: white;
+  background-color: #d5f9ba;
   padding: 10px 20px;
   align-self: end;
   border-radius: 10px;

@@ -75,8 +75,11 @@
           <!-- contatti -->
           <div class="contatti d-flex-col">
             <ul>
-              <li v-for="contact in contacts">
-                <div class="info-utente d-flex align-start">
+              <li v-for="(contact, index) in contacts">
+                <div
+                  class="info-utente d-flex align-start"
+                  @click="attivo(index)"
+                >
                   <div class="img-utente">
                     <img :src="contact.avatar" alt="foto profilo" />
                   </div>
@@ -94,10 +97,13 @@
           <header class="d-flex space-between">
             <div class="info-utente d-flex align-center">
               <div class="img-utente">
-                <img src="../img/avatar_1.jpg" alt="foto profilo" />
+                <img
+                  :src="contacts[contattoAttivo].avatar"
+                  alt="foto profilo"
+                />
               </div>
               <div class="d-flex-col">
-                <h3>Nome Utente</h3>
+                <h3>{{contacts[contattoAttivo].name}}</h3>
                 <p>Ultimo accesso oggi alle</p>
               </div>
             </div>
@@ -110,9 +116,12 @@
           <!-- /header -->
           <!-- chat -->
           <div class="chat">
-            <!-- <div class="utente">Prova messaggio utente</div>
-            <div class="utente">Prova messaggio utente</div>
-            <div class="interlocutore">Prova messaggio interlocutore</div> -->
+            <p
+              v-for="messaggio in contacts[contattoAttivo].messages"
+              :class="messaggio.status === 'sent' ? 'utente' : 'interlocutore'"
+            >
+              {{messaggio.message}}
+            </p>
           </div>
           <!-- /chat -->
           <!-- messaggio -->

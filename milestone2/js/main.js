@@ -167,6 +167,13 @@ createApp({
           ],
         },
       ],
+      contattoAttivo: 0,
     };
+  },
+  methods: {
+    // al click contatore è uguale a index
+    attivo(index) {
+      this.contattoAttivo = index;
+    },
   },
 }).mount("#app");
