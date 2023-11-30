@@ -39,3 +39,16 @@ Le 2 funzionalità che verranno impementate in questa milestone sono:
 4. Creare nei data una varibile (contatto attivo) con il valore default 0
 
 5. Al click eseguire una funzione che passa a contatto attivo l'index corrente
+
+### Milestone 3
+
+Le 2 funzionalità che verranno impementate in questa milestone sono: aggiunta di un nuovo messaggio tramite tasto enter, risposta interlocutore (ok, dopo un secondo)
+
+1. Direttiva v-model sull'input
+
+2. Al @keyup.enter aggiungere due nuovi oggetti all'array:
+
+   - Proprietà: date-"00:00", message-"testo input", status"sent".
+   - Proprietà: date-"00:00", message-"ok", status"received".
+
+3. Creare una timing function per visualzzare la risposta "ok" dopo un secondo
