@@ -213,16 +213,32 @@ header {
 
 .utente {
   background-color: #d5f9ba;
-  padding: 10px 20px;
+  padding: 15px 60px 15px 20px;
   align-self: end;
   border-radius: 10px;
 }
 
 .interlocutore {
   align-self: start;
-  padding: 10px 20px;
+  padding: 15px 60px 15px 20px;
   background-color: white;
   border-radius: 10px;
+}
+
+.testo {
+  position: relative;
+}
+
+.testo p:first-child {
+  margin-bottom: 5px;
+}
+
+.data {
+  font-size: 12px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #bdb9bb;
 }
 
 /* messaggio */

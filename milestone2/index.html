@@ -116,12 +116,14 @@
           <!-- /header -->
           <!-- chat -->
           <div class="chat">
-            <p
+            <div
               v-for="messaggio in contacts[contattoAttivo].messages"
+              class="testo d-flex"
               :class="messaggio.status === 'sent' ? 'utente' : 'interlocutore'"
             >
-              {{messaggio.message}}
-            </p>
+              <p>{{messaggio.message}}</p>
+              <p class="data">{{messaggio.date.slice(11, -3)}}</p>
+            </div>
           </div>
           <!-- /chat -->
           <!-- messaggio -->
