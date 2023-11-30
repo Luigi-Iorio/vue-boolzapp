@@ -52,3 +52,13 @@ Le 2 funzionalità che verranno impementate in questa milestone sono: aggiunta d
    - Proprietà: date-"00:00", message-"ok", status"received".
 
 3. Creare una timing function per visualzzare la risposta "ok" dopo un secondo
+
+### Milestone 4
+
+In questa milestone verrà implementato il codice per cercare e filtrare i contatti.
+
+1. V-model sull'input per la ricerca
+
+2. Funzione per cercare i contatti, verficare se il testo in input è incluso nei nomi all'interno dell'array
+
+3. Sostituire nel v-for l'array dei contatti con il nuovo array filtrato
