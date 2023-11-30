@@ -1,0 +1,247 @@
+/* RESET CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* COMMON */
+body {
+  height: 100vh;
+  margin: 0 auto;
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(to bottom, #009788 20%, #d5dbdb 20%);
+}
+
+li {
+  list-style-type: none;
+}
+
+:root {
+  --bg-green: #009788;
+  --bg-grey: #d5dbdb;
+  --bg-header: #eaeaea;
+  --icon: #b1b1b1;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.icon i {
+  cursor: pointer;
+}
+
+/* app */
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+/* container Boolzapp */
+.container {
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  background-color: #ffffff;
+}
+
+.left {
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.right {
+  width: 60%;
+}
+
+/* header */
+header {
+  height: 70px;
+  padding: 15px;
+  background-color: var(--bg-header);
+  border-right: 1px solid #d7d7d7;
+}
+
+.info-utente h3 {
+  margin-left: 20px;
+}
+
+.info-utente .d-flex-col {
+  margin-left: 20px;
+}
+
+.info-utente .d-flex-col h3 {
+  margin: 0;
+}
+
+.img-utente {
+  width: 50px;
+  height: 50px;
+}
+
+.img-utente img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon {
+  gap: 15px;
+  color: var(--icon);
+  font-size: 20px;
+}
+
+/* notifiche */
+.notifiche {
+  padding: 20px;
+  background-color: #8edafc;
+}
+
+.notifiche p {
+  text-decoration: underline;
+  color: #457e9b;
+}
+
+.bell {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-right: 10px;
+}
+
+.bell i {
+  font-size: 20px;
+  color: #8edafc;
+}
+
+/* ricerca */
+.ricerca {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.ricerca .icon {
+  width: 15%;
+  height: 30px;
+  background-color: white;
+}
+
+.ricerca input {
+  width: 85%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* contatti */
+.contatti {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+.contatti .info-utente {
+  padding: 10px 20px;
+  border-top: 1px solid #d7d7d7;
+  transition: 0.5s;
+}
+
+.contatti .info-utente:hover {
+  cursor: pointer;
+  background-color: #e9ebeb;
+}
+
+.contatti ul li:first-child .info-utente {
+  border: none;
+}
+
+.contatti .img-utente {
+  width: 60px;
+  height: 60px;
+}
+
+.contatti h3 {
+  font-size: 16px;
+}
+
+/* right */
+
+/* chat */
+.chat {
+  flex-grow: 1;
+  overflow-y: scroll;
+  background-image: url(/img/mine.jpg);
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 20px;
+}
+
+.utente {
+  background-color: rgb(91, 189, 91);
+  color: white;
+  padding: 10px 20px;
+  align-self: end;
+  border-radius: 10px;
+}
+
+.interlocutore {
+  align-self: start;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* messaggio */
+.messaggio {
+  padding: 15px;
+  background-color: var(--bg-header);
+}
+
+.messaggio input {
+  width: 80%;
+  padding: 0 20px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+}
+
+.messaggio .icon {
+  font-size: 20px;
+  color: #747675;
+  width: 10%;
+}
