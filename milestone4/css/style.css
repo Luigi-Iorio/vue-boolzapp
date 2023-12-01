@@ -58,6 +58,14 @@ li {
   justify-content: space-between;
 }
 
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
 .icon i {
   cursor: pointer;
 }

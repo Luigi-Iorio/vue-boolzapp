@@ -199,11 +199,23 @@ createApp({
     },
     ricercaContatti() {
       if (this.ricercaInput.trim() !== "") {
-        return this.contacts.filter((contact) =>
-          contact.name.toLowerCase().includes(this.ricercaInput.toLowerCase())
-        );
+        this.contacts.forEach((contact) => {
+          if (
+            contact.name.toLowerCase().includes(this.ricercaInput.toLowerCase())
+          ) {
+            contact.visible = true;
+          } else if (
+            !contact.name
+              .toLowerCase()
+              .includes(this.ricercaInput.toLowerCase())
+          ) {
+            contact.visible = false;
+          }
+        });
       } else {
-        return this.contacts;
+        this.contacts.forEach((contact) => {
+          contact.visible = true;
+        });
       }
     },
   },

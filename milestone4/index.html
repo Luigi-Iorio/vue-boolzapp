@@ -70,13 +70,17 @@
               id="searchChat"
               placeholder="Cerca o inizia una nuova chat"
               v-model="ricercaInput"
+              @keyup="ricercaContatti()"
             />
           </div>
           <!-- /ricerca -->
           <!-- contatti -->
           <div class="contatti d-flex-col">
-            <ul v-if="ricercaContatti().length > 0">
-              <li v-for="(contact, index) in ricercaContatti()">
+            <ul>
+              <li
+                v-for="(contact, index) in contacts"
+                :class="contact.visible === true ? 'd-block' : 'd-none'"
+              >
                 <div
                   class="info-utente d-flex align-start"
                   @click="attivo(index)"
