@@ -1,3 +1,5 @@
+var DateTime = luxon.DateTime;
+
 // destructuring
 const { createApp } = Vue;
 // app
@@ -201,7 +203,9 @@ createApp({
     rispostaPosticipata() {
       setTimeout(() => {
         this.contacts[this.contattoAttivo].messages.push({
-          date: "00/00/0000 00:00:00",
+          date: DateTime.now().toLocaleString(
+            DateTime.DATETIME_SHORT_WITH_SECONDS
+          ),
           message: "ok",
           status: "received",
           menuTendina: [],
@@ -211,7 +215,9 @@ createApp({
     invioMessaggio() {
       if (this.testoInput !== "") {
         this.contacts[this.contattoAttivo].messages.push({
-          date: "00/00/0000 00:00:00",
+          date: DateTime.now().toLocaleString(
+            DateTime.DATETIME_SHORT_WITH_SECONDS
+          ),
           message: this.testoInput,
           status: "sent",
           menuTendina: [],
