@@ -122,12 +122,19 @@
           <!-- chat -->
           <div class="chat">
             <div
-              v-for="messaggio in contacts[contattoAttivo].messages"
+              v-for="(messaggio, index) in contacts[contattoAttivo].messages"
               class="testo d-flex"
               :class="messaggio.status === 'sent' ? 'utente' : 'interlocutore'"
+              @click="menuMessaggio(index)"
             >
               <p>{{messaggio.message}}</p>
               <p class="data">{{messaggio.date.slice(11, -3)}}</p>
+              <div :class="messaggio.attivo === true ? 'info-messaggio' : ''">
+                <p>{{messaggio.menuTendina.info}}</p>
+                <p @click="cancellaMessaggio(index)">
+                  {{messaggio.menuTendina.delete}}
+                </p>
+              </div>
             </div>
           </div>
           <!-- /chat -->
