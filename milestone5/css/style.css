@@ -255,13 +255,28 @@ header {
   right: 10px;
   top: 40px;
   z-index: 20;
-  padding: 10px;
   background-color: white;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 .info-messaggio p {
-  padding: 10px 10px;
+  padding: 15px 20px;
+}
+
+.info-messaggio p:hover {
+  background-color: #e9ebeb;
+}
+
+.chat span {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #bdb9bb;
+  display: none;
+}
+
+.chat .testo:hover span {
+  display: block;
 }
 
 /* messaggio */

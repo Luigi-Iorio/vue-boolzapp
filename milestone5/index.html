@@ -125,16 +125,18 @@
               v-for="(messaggio, index) in contacts[contattoAttivo].messages"
               class="testo d-flex"
               :class="messaggio.status === 'sent' ? 'utente' : 'interlocutore'"
-              @click="menuMessaggio(index)"
+              @click.stop="menuMessaggio(index)"
             >
               <p>{{messaggio.message}}</p>
+              <span><i class="fa-solid fa-chevron-down"></i></span>
               <p class="data">{{messaggio.date.slice(11, -3)}}</p>
               <div
-                :class="messaggio.menuTendina.attivo === true ? 'info-messaggio' : ''"
+                v-for="(elemento, indice) in messaggio.menuTendina"
+                :class="elemento.attivo === true ? 'info-messaggio' : 'd-none'"
               >
-                <p>{{messaggio.menuTendina.info}}</p>
-                <p @click="cancellaMessaggio(index)">
-                  {{messaggio.menuTendina.delete}}
+                <p>{{elemento.info}}</p>
+                <p @click.stop="cancellaMessaggio(index)">
+                  {{elemento.delete}}
                 </p>
               </div>
             </div>

@@ -248,8 +248,9 @@ createApp({
         attivo: true,
       });
     },
-    // cancellaMessaggio(index) {
-    //   this.contacts[this.contattoAttivo].messages[index]menuTendina.slice(index, 1);
-    // },
+    cancellaMessaggio(index) {
+      console.log(index);
+      this.contacts[this.contattoAttivo].messages.splice(index, 1);
+    },
   },
 }).mount("#app");
