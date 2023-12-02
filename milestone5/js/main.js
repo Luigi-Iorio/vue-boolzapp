@@ -1,3 +1,4 @@
+// luxon
 var DateTime = luxon.DateTime;
 
 // destructuring
@@ -200,6 +201,7 @@ createApp({
     attivo(index) {
       this.contattoAttivo = index;
     },
+    // risposta interlocutore dopo un secondo
     rispostaPosticipata() {
       setTimeout(() => {
         this.contacts[this.contattoAttivo].messages.push({
@@ -212,6 +214,7 @@ createApp({
         });
       }, 1000);
     },
+    // invio messaggio utente tramite input
     invioMessaggio() {
       if (this.testoInput !== "") {
         this.contacts[this.contattoAttivo].messages.push({
@@ -226,6 +229,7 @@ createApp({
       }
       this.testoInput = "";
     },
+    // filtro in lista contatti
     ricercaContatti() {
       if (this.ricercaInput.trim() !== "") {
         this.contacts.forEach((contact) => {
@@ -247,6 +251,7 @@ createApp({
         });
       }
     },
+    // menu a tendina su messaggio
     menuMessaggio(index) {
       this.contacts[this.contattoAttivo].messages[index].menuTendina.push({
         info: "Message info",
@@ -254,6 +259,7 @@ createApp({
         attivo: true,
       });
     },
+    // rimozione messaggio dalla lista messaggi
     cancellaMessaggio(index) {
       console.log(index);
       this.contacts[this.contattoAttivo].messages.splice(index, 1);
