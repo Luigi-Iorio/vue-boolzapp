@@ -41,11 +41,17 @@
                 <h3>Nome Utente</h3>
               </div>
             </div>
-            <div class="icon d-flex align-center">
-              <i class="fa-solid fa-circle-notch"></i>
-              <i class="fa-solid fa-message"></i>
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>
+            <ul class="icon d-flex align-center">
+              <li></li>
+                <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-message"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+              </li>
+            </ul>
           </header>
           <!-- /header -->
           <!-- notifiche -->
@@ -54,24 +60,27 @@
               <i class="fa-solid fa-bell-slash"></i>
             </div>
             <div class="d-flex-col">
-              <h4>Ricevi notifiche di nuovi messeaggi</h4>
-              <p>attivia notifiche desktop</p>
+              <h4>Ricevi notifiche di nuovi messaggi</h4>
+              <a href="#">Attivia notifiche desktop</a>
             </div>
           </div>
           <!-- notifiche -->
           <!-- ricerca -->
-          <div class="ricerca d-flex align-center">
-            <div class="icon d-flex align-center justify-center">
-              <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="ricerca">
+            <div class="cont-ricerca d-flex align-center">
+              <div class="icon d-flex align-center justify-center">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <input
+                type="search"
+                name="searchChat"
+                id="searchChat"
+                placeholder="Cerca o inizia una nuova chat"
+                v-model="ricercaInput"
+                @keyup="ricercaContatti()"
+              />
             </div>
-            <input
-              type="search"
-              name="searchChat"
-              id="searchChat"
-              placeholder="Cerca o inizia una nuova chat"
-              v-model="ricercaInput"
-              @keyup="ricercaContatti()"
-            />
+            
           </div>
           <!-- /ricerca -->
           <!-- contatti -->
@@ -128,16 +137,16 @@
                 <p>Ultimo accesso oggi alle</p>
               </div>
             </div>
-            <div class="icon d-flex align-center">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <i class="fa-solid fa-paperclip"></i>
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-            </div>
+            <ul class="icon d-flex align-center">
+              <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+              <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
+              <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+            </ul>
           </header>
           <!-- /header -->
           <!-- chat -->
-          <div class="chat">
-            <div
+          <ul class="chat">
+              <li
               v-for="(messaggio, index) in contacts[contattoAttivo].messages"
               class="testo d-flex"
               :class="messaggio.status === 'sent' ? 'utente' : 'interlocutore'"
@@ -150,13 +159,13 @@
                 v-for="(elemento, indice) in messaggio.menuTendina"
                 :class="elemento.attivo === true ? 'info-messaggio' : 'd-none'"
               >
-                <p>{{elemento.info}}</p>
+                <p @click.stop>{{elemento.info}}</p>
                 <p @click.stop="cancellaMessaggio(index)">
                   {{elemento.delete}}
                 </p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
           <!-- /chat -->
           <!-- messaggio -->
           <div class="messaggio d-flex align-center space-between">
