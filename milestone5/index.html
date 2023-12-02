@@ -88,7 +88,23 @@
                   <div class="img-utente">
                     <img :src="contact.avatar" alt="foto profilo" />
                   </div>
-                  <h3>{{contact.name}}</h3>
+                  <div class="info-contatti d-flex space-between">
+                    <div class="ora">
+                      <h3>{{contact.name}}</h3>
+                      <p
+                        v-for="(message, index) in contact.messages"
+                        class="ultimo-messaggio d-none"
+                      >
+                        {{message.message}}
+                      </p>
+                    </div>
+                    <h3
+                      v-for="(message, index) in contact.messages"
+                      class="ultimo-messaggio d-none"
+                    >
+                      {{message.date.slice(11, -3)}}
+                    </h3>
+                  </div>
                 </div>
               </li>
             </ul>

@@ -208,6 +208,23 @@ header {
   font-size: 16px;
 }
 
+.contatti .info-contatti {
+  width: 100%;
+}
+
+.contatti .ultimo-messaggio {
+  color: var(--icon);
+}
+
+.contatti .ultimo-messaggio:last-child {
+  display: block;
+}
+
+.contatti .ora p {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
 /* right */
 
 /* chat */
