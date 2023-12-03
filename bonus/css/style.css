@@ -102,6 +102,7 @@ a {
 header {
   padding: 10px 20px;
   background-color: var(--bg-header);
+  position: relative;
 }
 
 .info-utente .d-flex-col {
@@ -130,6 +131,28 @@ header {
 .icon i {
   display: block;
   color: var(--icon);
+}
+
+.cancella {
+  background-color: white;
+  position: absolute;
+  right: 0;
+  bottom: -100px;
+  z-index: 20;
+}
+
+.cancella p {
+  text-align: right;
+  padding: 15px 20px;
+}
+
+.cancella p:last-child {
+  color: red;
+}
+
+.cancella p:hover {
+  cursor: pointer;
+  background-color: var(--bg-header);
 }
 
 /* notifiche */

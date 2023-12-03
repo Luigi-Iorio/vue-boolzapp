@@ -195,6 +195,7 @@ createApp({
       testoInput: "",
       ricercaInput: "",
       planeVisible: true,
+      cancellaInChat: false,
     };
   },
   methods: {
@@ -262,7 +263,6 @@ createApp({
     },
     // rimozione messaggio dalla lista messaggi
     cancellaMessaggio(index) {
-      console.log(index);
       this.contacts[this.contattoAttivo].messages.splice(index, 1);
     },
     // cambio icona per invio messaggio
@@ -272,6 +272,20 @@ createApp({
       } else {
         this.planeVisible = true;
       }
+    },
+    // popup cancella messaggi/chat
+    popupMessaggi() {
+      this.cancellaInChat = !this.cancellaInChat;
+    },
+    // cancella tutti i messaggi
+    cancellaMessaggi() {
+      this.contacts[this.contattoAttivo].messages = [];
+    },
+    // cancella chat
+    cancellaChat() {
+      this.contacts[this.contattoAttivo] = [];
+      // la nuova chat visualizzata sarà quella precedente a quella appena eliminata
+      this.contattoAttivo = this.contattoAttivo - 1;
     },
   },
 }).mount("#app");

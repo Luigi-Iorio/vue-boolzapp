@@ -143,8 +143,12 @@
               <li>
                 <a href="#"><i class="fa-solid fa-paperclip"></i></a>
               </li>
-              <li>
+              <li @click="popupMessaggi">
                 <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                <div :class="cancellaInChat === true ? 'cancella' : 'd-none'">
+                  <p @click="cancellaMessaggi">Cancella tutti i messaggi</p>
+                  <p @click="cancellaChat">Cancella chat</p>
+                </div>
               </li>
             </ul>
           </header>
