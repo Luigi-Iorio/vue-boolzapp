@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- /font awesome -->
+    <!-- google font - Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- /google font - Lato -->
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- /style css -->
+  </head>
+  <body>
+    <div id="app" v-cloak class="d-flex align-center">
+      <!-- container Boolzapp -->
+      <div class="container d-flex">
+        <!-- sinistra -->
+        <div class="left d-flex-col">
+          <!-- header -->
+          <header class="d-flex space-between">
+            <div class="info-utente d-flex align-center">
+              <div class="img-utente">
+                <img src="../img/avatar_io.jpg" alt="foto profilo" />
+              </div>
+              <div class="d-flex-col">
+                <h3>Nome Utente</h3>
+              </div>
+            </div>
+            <ul class="icon d-flex align-center">
+              <li></li>
+                <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-message"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+              </li>
+            </ul>
+          </header>
+          <!-- /header -->
+          <!-- notifiche -->
+          <div class="notifiche d-flex align-center">
+            <div class="bell d-flex align-center justify-center">
+              <i class="fa-solid fa-bell-slash"></i>
+            </div>
+            <div class="d-flex-col">
+              <h4>Ricevi notifiche di nuovi messaggi</h4>
+              <a href="#">Attivia notifiche desktop</a>
+            </div>
+          </div>
+          <!-- notifiche -->
+          <!-- ricerca -->
+          <div class="ricerca">
+            <div class="cont-ricerca d-flex align-center">
+              <div class="icon d-flex align-center justify-center">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <input
+                type="search"
+                name="searchChat"
+                id="searchChat"
+                placeholder="Cerca o inizia una nuova chat"
+                v-model="ricercaInput"
+                @keyup="ricercaContatti()"
+              />
+            </div>
+            
+          </div>
+          <!-- /ricerca -->
+          <!-- contatti -->
+          <div class="contatti d-flex-col">
+            <ul>
+              <li
+                v-for="(contact, index) in contacts"
+                :class="contact.visible === true ? 'd-block' : 'd-none'"
+              >
+                <div
+                  class="info-utente d-flex align-start"
+                  @click="attivo(index)"
+                >
+                  <div class="img-utente">
+                    <img :src="contact.avatar" alt="foto profilo" />
+                  </div>
+                  <div class="info-contatti d-flex space-between">
+                    <div class="ora">
+                      <h3>{{contact.name}}</h3>
+                      <p
+                        v-for="(message, index) in contact.messages"
+                        class="ultimo-messaggio d-none"
+                      >
+                        {{message.message}}
+                      </p>
+                    </div>
+                    <h3
+                      v-for="(message, index) in contact.messages"
+                      class="ultimo-messaggio d-none"
+                    >
+                      {{message.date.slice(11, -3)}}
+                    </h3>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /contatti -->
+        </div>
+        <!-- /sinistra -->
+        <!-- destra -->
+        <div class="right d-flex-col">
+          <!-- header -->
+          <header class="d-flex space-between">
+            <div class="info-utente d-flex align-center">
+              <div class="img-utente">
+                <img
+                  :src="contacts[contattoAttivo].avatar"
+                  alt="foto profilo"
+                />
+              </div>
+              <div class="d-flex-col">
+                <h3>{{contacts[contattoAttivo].name}}</h3>
+                <p>Ultimo accesso oggi alle</p>
+              </div>
+            </div>
+            <ul class="icon d-flex align-center">
+              <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+              <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
+              <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+            </ul>
+          </header>
+          <!-- /header -->
+          <!-- chat -->
+          <ul class="chat">
+              <li
+              v-for="(messaggio, index) in contacts[contattoAttivo].messages"
+              class="testo d-flex"
+              :class="messaggio.status === 'sent' ? 'utente' : 'interlocutore'"
+              @click.stop="menuMessaggio(index)"
+            >
+              <p>{{messaggio.message}}</p>
+              <span><i class="fa-solid fa-chevron-down"></i></span>
+              <p class="data">{{messaggio.date.slice(11, -3)}}</p>
+              <div
+                v-for="(elemento, indice) in messaggio.menuTendina"
+                :class="elemento.attivo === true ? 'info-messaggio' : 'd-none'"
+              >
+                <p @click.stop>{{elemento.info}}</p>
+                <p @click.stop="cancellaMessaggio(index)">
+                  {{elemento.delete}}
+                </p>
+              </div>
+            </li>
+          </ul>
+          <!-- /chat -->
+          <!-- messaggio -->
+          <div class="messaggio d-flex align-center space-between">
+            <div class="icon d-flex justify-center">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <input
+              type="text"
+              id="messaggio"
+              name="messaggio"
+              placeholder="Scrivi un messaggio"
+              v-model="testoInput"
+              @keyup.enter="invioMessaggio"
+            />
+            <div class="icon d-flex justify-center">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
+          <!-- /messaggio -->
+        </div>
+        <!-- /destra -->
+      </div>
+      <!-- container Boolzapp -->
+    </div>
+    <!-- luxon -->
+    <script src=" https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js "></script>
+    <script src="luxon.js"></script>
+    <!-- /luxon -->
+    <!-- VueJs -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- /VueJs -->
+    <!-- MainJs -->
+    <script src="js/main.js"></script>
+    <!-- MainJs -->
+  </body>
+</html>
