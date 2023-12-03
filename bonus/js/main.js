@@ -216,7 +216,7 @@ createApp({
     },
     // invio messaggio utente tramite input
     invioMessaggio() {
-      if (this.testoInput !== "") {
+      if (this.testoInput.trim() !== "") {
         this.contacts[this.contattoAttivo].messages.push({
           date: DateTime.now().toLocaleString(
             DateTime.DATETIME_SHORT_WITH_SECONDS
