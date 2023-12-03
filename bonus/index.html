@@ -68,7 +68,7 @@
           <!-- ricerca -->
           <div class="ricerca">
             <div class="cont-ricerca d-flex align-center">
-              <div class="icon d-flex align-center justify-center">
+              <div class="icon">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
               <input
@@ -79,6 +79,25 @@
                 v-model="ricercaInput"
                 @keyup="ricercaContatti()"
               />
+              <div @click.stop="popupNuovaChat" class="icon plus">
+                <i class="fa-solid fa-plus"></i>
+                <div
+                  @click.stop
+                  :class="nuovaChat === true ? 'info-chat' : 'd-none'"
+                >
+                  <input
+                    v-model="nuovaContatto"
+                    type="text"
+                    placeholder="Inserisci nome e cognome del nuovo contatto"
+                  />
+                  <input
+                    v-model="nuovaImmagineContatto"
+                    type="text"
+                    placeholder="Inserisci un url per la foto profilo"
+                  />
+                  <button @click="nuovaChatContatto">Aggiungi contatto</button>
+                </div>
+              </div>
             </div>
           </div>
           <!-- /ricerca -->

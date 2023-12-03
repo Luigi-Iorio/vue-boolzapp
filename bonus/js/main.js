@@ -196,6 +196,9 @@ createApp({
       ricercaInput: "",
       planeVisible: true,
       cancellaInChat: false,
+      nuovaChat: false,
+      nuovaContatto: "",
+      nuovaImmagineContatto: "",
     };
   },
   methods: {
@@ -286,6 +289,21 @@ createApp({
       this.contacts[this.contattoAttivo] = [];
       // la nuova chat visualizzata sarà quella precedente a quella appena eliminata
       this.contattoAttivo = this.contattoAttivo - 1;
+    },
+    // info nuova chat
+    popupNuovaChat() {
+      this.nuovaChat = !this.nuovaChat;
+    },
+    // nuova chat
+    nuovaChatContatto() {
+      if (this.nuovaContatto.trim() !== "" && this.nuovaImmagineContatto.trim())
+        this.contacts.unshift({
+          name: this.nuovaContatto,
+          avatar: this.nuovaImmagineContatto,
+          visible: true,
+          messages: [],
+        });
+      this.nuovaChat = !this.nuovaChat;
     },
   },
 }).mount("#app");
