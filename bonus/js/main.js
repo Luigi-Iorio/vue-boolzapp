@@ -194,6 +194,7 @@ createApp({
       contattoAttivo: 0,
       testoInput: "",
       ricercaInput: "",
+      planeVisible: true,
     };
   },
   methods: {
@@ -263,6 +264,14 @@ createApp({
     cancellaMessaggio(index) {
       console.log(index);
       this.contacts[this.contattoAttivo].messages.splice(index, 1);
+    },
+    // cambio icona per invio messaggio
+    cambioIcona() {
+      if (this.testoInput.trim() !== "") {
+        this.planeVisible = false;
+      } else {
+        this.planeVisible = true;
+      }
     },
   },
 }).mount("#app");

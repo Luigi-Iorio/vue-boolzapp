@@ -42,7 +42,7 @@
               </div>
             </div>
             <ul class="icon d-flex align-center">
-              <li></li>
+              <li>
                 <a href="#"><i class="fa-solid fa-circle-notch"></i></a>
               </li>
               <li>
@@ -80,7 +80,6 @@
                 @keyup="ricercaContatti()"
               />
             </div>
-            
           </div>
           <!-- /ricerca -->
           <!-- contatti -->
@@ -138,15 +137,21 @@
               </div>
             </div>
             <ul class="icon d-flex align-center">
-              <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-              <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
-              <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+              <li>
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-paperclip"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+              </li>
             </ul>
           </header>
           <!-- /header -->
           <!-- chat -->
           <ul class="chat">
-              <li
+            <li
               v-for="(messaggio, index) in contacts[contattoAttivo].messages"
               class="testo d-flex"
               :class="messaggio.status === 'sent' ? 'utente' : 'interlocutore'"
@@ -179,9 +184,20 @@
               placeholder="Scrivi un messaggio"
               v-model="testoInput"
               @keyup.enter="invioMessaggio"
+              @keyup="cambioIcona"
             />
-            <div class="icon d-flex justify-center">
+            <div
+              v-if="planeVisible"
+              class="icon microphone d-flex justify-center"
+            >
               <i class="fa-solid fa-microphone"></i>
+            </div>
+            <div
+              v-else="planeVisible"
+              @click="invioMessaggio"
+              class="icon plane d-flex justify-center"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
             </div>
           </div>
           <!-- /messaggio -->
