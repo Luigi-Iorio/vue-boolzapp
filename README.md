@@ -62,3 +62,20 @@ In questa milestone verrà implementato il codice per cercare e filtrare i conta
 2. Funzione per cercare i contatti, verficare se il testo in input è incluso nei nomi all'interno dell'array
 
 3. Sostituire nel v-for l'array dei contatti con il nuovo array filtrato
+
+### Milestone 5
+
+Nella milestone 5 sono state introdotte 2 funzionalità per migliorare l'esperienza utente:
+
+1. Ora è possibile cancellare un messaggio selezionato facendo clic su di esso, il che attiverà un menu a tendina
+
+2. Nella lista dei contatti, è stata aggiunta la visualizzazione dell'ora e dell'ultimo messaggio inviato/ricevuto
+
+### Bonus
+
+Nella sezione bonus, ho implementato alcune funzionalità aggiuntive per arricchire ulteriormente l'applicazione:
+
+1. La disabilitazione dell'invio di un messaggio se è vuoto o composto solo da spazi
+2. Durante la digitazione di un messaggio, verrà visualizzato un aeroplano di carta al posto del microfono. Facendo clic sull'aeroplano, il messaggio verrà inviato
+3. Facendo clic sui tre puntini in alto, si aprirà un popup che consente di eliminare tutti i messaggi di una chat o addirittura eliminare l'intera chat
+4. È stata aggiunta la funzione di aggiunta di nuovi contatti: facendo clic su "+", verranno richiesti il nome, il cognome e un URL per un'immagine, che saranno utilizzati per creare un nuovo contatto
